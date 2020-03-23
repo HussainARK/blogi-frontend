@@ -24,6 +24,7 @@ const ListPosts = () => {
 
 		const deletePost = async id => {
 			try {
+				// eslint-disable-next-line
 				const deleteAPost = await fetch(
 					`http://localhost:2000/posts/${id}?key=${apiKey}`,
 					{

@@ -13,7 +13,7 @@ const CreatePost = () => {
 
 			try {
 				const body = { title, author, content }
-
+				// eslint-disable-next-line
 				const response = await fetch(`https://blogi-backend.herokuapp.com/posts?key=${apiKey}`, {
 					method: "POST",
 					headers: {"Content-Type": "application/json"},

@@ -12,7 +12,7 @@ const EditPost = ({ post }) => {
 
 		try {
 			const body = { title, author, content };
-
+			// eslint-disable-next-line
 			const reponse = await fetch(`http://localhost:2000/posts/${post.bid}?key=${apiKey}`,
 			{
 				method: "PUT",
