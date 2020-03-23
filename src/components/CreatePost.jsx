@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const apiKey = process.env.API_KEY;
+
 const CreatePost = () => {
 	const [ title, setTitle ] = useState("");
 	const [ author, setAuthor ] = useState("");
@@ -12,7 +14,7 @@ const CreatePost = () => {
 			try {
 				const body = { title, author, content }
 
-				const response = await fetch('http://localhost:2000/posts', {
+				const response = await fetch(`https://blogi-backend.herokuapp.com/posts?key=${apiKey}`, {
 					method: "POST",
 					headers: {"Content-Type": "application/json"},
 					body: JSON.stringify(body)

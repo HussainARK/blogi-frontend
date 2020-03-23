@@ -6,6 +6,8 @@
 
 /build
 
+/src/components/.ENV
+
 /.DS_Store
 /.env.local
 /.env.development.local

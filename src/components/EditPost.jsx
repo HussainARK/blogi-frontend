@@ -1,5 +1,7 @@
 import React, { useState, Fragment } from 'react';
 
+const apiKey = process.env.API_KEY;
+
 const EditPost = ({ post }) => {
 	const [ title, setTitle ] = useState(post.title);
 	const [ author, setAuthor ] = useState(post.author);
@@ -11,7 +13,7 @@ const EditPost = ({ post }) => {
 		try {
 			const body = { title, author, content };
 
-			const reponse = await fetch(`http://localhost:2000/posts/${post.bid}`,
+			const reponse = await fetch(`http://localhost:2000/posts/${post.bid}?key=${apiKey}`,
 			{
 				method: "PUT",
 				headers: {"Content-Type": "application/json"},
