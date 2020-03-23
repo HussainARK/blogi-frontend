@@ -9,7 +9,7 @@ const ListPosts = () => {
 
 	const getPosts = async () => {
 		try {
-			const response = await fetch('http://localhost:2000/posts');
+			const response = await fetch(`https://blogi-backend.herokuapp.com/posts?key=${apiKey}`);
 			const jsonData = await response.json();
 
 			setPosts(jsonData)
