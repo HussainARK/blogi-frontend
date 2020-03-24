@@ -1,9 +1,14 @@
+/*
+ *   Copyright (c) 2020 
+ *   All rights reserved.
+ */
+
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import CreatePost from './components/CreatePost';
-import ForOFor from './components/404';
+import ForOFor from './components/Error404';
 import ListPosts from './components/ListPosts';
 import About from './components/About';
 

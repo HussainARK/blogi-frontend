@@ -1,6 +1,8 @@
 import React, { useState, Fragment } from 'react';
+import { config } from 'dotenv';
+config();
 
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.REACT_APP_API_KEY;
 
 const EditPost = ({ post }) => {
 	const [ title, setTitle ] = useState(post.title);
@@ -13,14 +15,14 @@ const EditPost = ({ post }) => {
 		try {
 			const body = { title, author, content };
 			// eslint-disable-next-line
-			const reponse = await fetch(`http://localhost:2000/posts/${post.bid}?key=${apiKey}`,
+			const reponse = await fetch(`https://blogi-backend.herokuapp.com/posts/${post.bid}?key=${apiKey}`,
 			{
 				method: "PUT",
 				headers: {"Content-Type": "application/json"},
 				body: JSON.stringify(body)
 			});
 
-			window.location = '/posts';
+			window.location = '/';
 		} catch (err) {
 			console.error(err.message);
 		}

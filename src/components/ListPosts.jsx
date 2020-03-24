@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EditPost from './EditPost';
 
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.REACT_APP_API_KEY;
 
 const ListPosts = () => {
 	const [ posts, setPosts ] = useState([]);
@@ -26,7 +26,7 @@ const ListPosts = () => {
 			try {
 				// eslint-disable-next-line
 				const deleteAPost = await fetch(
-					`http://localhost:2000/posts/${id}?key=${apiKey}`,
+					`https://blogi-backend.herokuapp.com/posts/${id}?key=${apiKey}`,
 					{
 						method: "DELETE"
 					}
