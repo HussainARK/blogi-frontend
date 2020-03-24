@@ -1,10 +1,14 @@
 import React, { Fragment } from 'react';
 
 const Error404 = () => {
+  const errorStyles = {
+    textAlign: "center"
+  }
+
   return (
     <Fragment>
-      <h1 style="text-align: center;">404</h1>
-      <p style="text-align: center;">Error: Page Not Found</p>
+      <h1 style={{textAlign: 'center', fontSize: 50}}>404</h1>
+      <p style={errorStyles}>Error: Page Not Found</p>
     </Fragment>
   );
 }
