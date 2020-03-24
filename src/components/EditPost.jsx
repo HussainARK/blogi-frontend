@@ -1,5 +1,4 @@
 import React, { useState, Fragment } from 'react';
-import { Redirect } from 'react-router-dom';
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -14,14 +13,14 @@ const EditPost = ({ post }) => {
 		try {
 			const body = { title, author, content };
 			// eslint-disable-next-line
-			const reponse = await fetch(`https://blogi-backend.herokuapp.com/posts/${post.bid}?key=${apiKey}`,
+			const response = await fetch(`https://blogi-backend.herokuapp.com/posts/${post.bid}?key=${apiKey}`,
 			{
 				method: "PUT",
 				headers: {"Content-Type": "application/json"},
 				body: JSON.stringify(body)
 			});
 
-			<Redirect to="/posts" />
+			window.location = "/";
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -51,10 +50,13 @@ const EditPost = ({ post }) => {
 								}>&times;</button>
 							</div>
 
-					<div className="modal-body">
-						<input type="text" onChange={e => setTitle(e.target.value)} value={title} className="form-control" />
-						<input type="text" onChange={f => setAuthor(f.target.value)} value={author} className="form-control" />
-						<input type="text" onChange={g => setContent(g.target.value)} value={content} className="form-control" />
+					<div className="modal-body p-4">
+						<label className="mt-1" htmlFor="new-title">New Title:</label>
+						<input type="text" id="new-title" onChange={e => setTitle(e.target.value)} value={title} className="form-control" />
+						<label className="mt-1" htmlFor="new-title">New Author:</label>
+						<input type="text" id="new-author" onChange={f => setAuthor(f.target.value)} value={author} className="form-control" />
+						<label className="mt-1" htmlFor="new-title">New content:</label>
+						<input type="text" id="new-content" onChange={g => setContent(g.target.value)} value={content} className="form-control" />
 					</div>
 
 					<div className="modal-footer">
@@ -64,7 +66,7 @@ const EditPost = ({ post }) => {
 								data-dismiss="modal"
 							onClick={e => updatePost(e)}
 						>Edit</button>
-						<button type="button" className="btn btn-danger" onClick={e => updatePost(e)}data-dismiss="modal">Close</button>
+						<button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
