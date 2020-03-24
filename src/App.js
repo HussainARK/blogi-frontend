@@ -1,14 +1,14 @@
 /*
- *   Copyright (c) 2020 
- *   All rights reserved.
- */
+	* Copyright (c) 2020 
+	* All rights reserved.
+	*/
 
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import CreatePost from './components/CreatePost';
-import ForOFor from './components/Error404';
+import Error404 from './components/Error404';
 import ListPosts from './components/ListPosts';
 import About from './components/About';
 
@@ -23,7 +23,7 @@ function App() {
 					<Route path="/posts/new" exact component={CreatePost} />
 						<Route path="/posts" exact component={ListPosts} />
 						<Route path="/about" exact component={About} />
-					<Route path="*" component={ForOFor} />
+					<Route path="*" component={Error404} />
 						</Switch>
 						</div>
 			</Router>

@@ -3,10 +3,10 @@ import React, { Fragment } from 'react';
 const ForOFor = () => {
   return (
     <Fragment>
-      <h1>404</h1>
-      <p>Error: Page Not Found</p>
+      <h1 style="text-align: center;">404</h1>
+      <p style="text-align: center;">Error: Page Not Found</p>
     </Fragment>
   );
 }
  
-export default ForOFor ;
+export default Error404;
