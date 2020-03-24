@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { config } from 'dotenv';
-config();
+import { Redirect } from 'react-router-dom';
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -20,9 +19,9 @@ const CreatePost = () => {
 					method: "POST",
 					headers: {"Content-Type": "application/json"},
 					body: JSON.stringify(body)
-						});
-
-						window.location = '/';
+				});
+					
+				<Redirect to="/posts" />
 			} catch (err) {
 				console.error(err.message)
 			}

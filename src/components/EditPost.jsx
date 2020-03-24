@@ -1,6 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { config } from 'dotenv';
-config();
+import { Redirect } from 'react-router-dom';
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -22,7 +21,7 @@ const EditPost = ({ post }) => {
 				body: JSON.stringify(body)
 			});
 
-			window.location = '/';
+			<Redirect to="/posts" />
 		} catch (err) {
 			console.error(err.message);
 		}
