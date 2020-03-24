@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const ForOFor = () => {
+const Error404 = () => {
   return (
     <Fragment>
       <h1 style="text-align: center;">404</h1>
