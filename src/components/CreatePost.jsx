@@ -33,7 +33,7 @@ const CreatePost = () => {
 				body: JSON.stringify(body)
 			});
 
-			window.location = "/";
+			window.location = "/posts";
 		} catch (err) {
 			console.error(err.message)
 		}

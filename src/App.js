@@ -18,14 +18,14 @@ function App() {
 			<Router>
 				<NavBar />
 					<div className="container">
-				<Switch>
-					<Route path="/" exact component={Home} />
-					<Route path="/posts/new" exact component={CreatePost} />
-						<Route path="/posts" exact component={ListPosts} />
-						<Route path="/about" exact component={About} />
-					<Route path="*" component={Error404} />
+						<Switch>
+							<Route path="/" exact component={Home} />
+							<Route path="/posts/new" exact component={CreatePost} />
+							<Route path="/posts" exact component={ListPosts} />
+							<Route path="/about" exact component={About} />
+							<Route path="*" component={Error404} />
 						</Switch>
-						</div>
+					</div>
 			</Router>
 		</Fragment>
 	);
