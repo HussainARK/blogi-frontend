@@ -8,36 +8,36 @@ const CreatePost = () => {
 	const [ author, setAuthor ] = useState("");
 	const [ content, setContent ] = useState("");
 
-		const onSubmit = async e => {
-			e.preventDefault();
+	const onSubmit = async e => {
+		e.preventDefault();
 
-			try {
-				const body = { title, author, content };
+		try {
+			const body = { title, author, content };
 
-				if (!body.title) {
-					body.title = 'N/A';
-				}
-
-				if (!body.author) {
-					body.author = 'N/A';
-				}
-
-				if (!body.content) {
-					body.content = 'N/A'
-				}
-				
-				// eslint-disable-next-line
-				const response = await fetch(`https://blogi-backend.herokuapp.com/posts?key=${apiKey}`, {
-					method: "POST",
-					headers: {"Content-Type": "application/json"},
-					body: JSON.stringify(body)
-				});
-
-				window.location = "/";
-			} catch (err) {
-				console.error(err.message)
+			if (!body.title) {
+				body.title = 'N/A';
 			}
-		};
+
+			if (!body.author) {
+				body.author = 'N/A';
+			}
+
+			if (!body.content) {
+				body.content = 'N/A'
+			}
+			
+			// eslint-disable-next-line
+			const response = await fetch(`https://blogi-backend.herokuapp.com/posts?key=${apiKey}`, {
+				method: "POST",
+				headers: {"Content-Type": "application/json"},
+				body: JSON.stringify(body)
+			});
+
+			window.location = "/";
+		} catch (err) {
+			console.error(err.message)
+		}
+	};
 
 	return (
 		<Fragment>
