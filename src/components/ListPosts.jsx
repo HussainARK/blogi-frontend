@@ -14,7 +14,7 @@ const ListPosts = () => {
 
 			setPosts(jsonData)
 		} catch (err) {
-			console.error(err.message);
+			return;
 		}
 		};
 
@@ -34,7 +34,7 @@ const ListPosts = () => {
 
 				setPosts(posts.filter(post => post.bid !== id));
 			} catch (err) {
-				console.error(err.message);
+				return;
 			}
 		};
 
@@ -54,9 +54,9 @@ const ListPosts = () => {
 						<p><small>Written by "{post.author}"</small></p>
 						<p>{post.content}</p>
 							<button onClick={() => deletePost(post.bid)} className="btn btn-danger m-2">Delete</button>
-								<EditPost post={post} />
-								<hr />
-							</Fragment>
+							<EditPost post={post} />
+							<hr />
+					</Fragment>
 				);
 				})}
 				</Fragment>
