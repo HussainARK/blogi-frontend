@@ -51,7 +51,7 @@ const ListPosts = () => {
 				return (
 					<Fragment className="bg-light">
 						<h3 class="post-title">{post.title}</h3>
-						<p class="post-author"><small>Written by "{post.author}"</small></p>
+						<p><small class="post-author">Written by "{post.author}"</small></p>
 						<p class="post-content">{post.content}</p>
 							<button onClick={() => deletePost(post.bid)} className="btn btn-danger m-2">Delete</button>
 							<EditPost post={post} />
