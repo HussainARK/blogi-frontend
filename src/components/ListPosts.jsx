@@ -50,9 +50,9 @@ const ListPosts = () => {
 			{posts.map(post => {
 				return (
 					<Fragment className="bg-light">
-						<h3>{post.title}</h3>
-						<p><small>Written by "{post.author}"</small></p>
-						<p>{post.content}</p>
+						<h3 class="post-title">{post.title}</h3>
+						<p class="post-author"><small>Written by "{post.author}"</small></p>
+						<p class="post-content">{post.content}</p>
 							<button onClick={() => deletePost(post.bid)} className="btn btn-danger m-2">Delete</button>
 							<EditPost post={post} />
 							<hr />
